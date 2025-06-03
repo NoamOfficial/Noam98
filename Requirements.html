@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NoamOS 98X - Requirements</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
+    }
+    header, footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #1f1f1f;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-weight: 700;
+    }
+    .collapsible {
+      background-color: #282828;
+      color: white;
+      cursor: pointer;
+      padding: 14px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .collapsible:hover {
+      background-color: #3a3a3a;
+    }
+    .collapsible.active {
+      background-color: #505050;
+    }
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #1e1e1e;
+      border-radius: 0 0 6px 6px;
+      padding: 0 20px;
+      margin-bottom: 15px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+    .content p, .content ul {
+      margin: 12px 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a.btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+    }
+    a.btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NoamOS 98X - System Requirements</h1>
+  </header>
+
+  <button class="collapsible">Minimum Requirements</button>
+  <div class="content">
+    <ul>
+      <li><strong>Processor:</strong> Pentium III 600 MHz or higher</li>
+      <li><strong>RAM:</strong> 256 MB minimum</li>
+      <li><strong>Storage:</strong> 2 GB free disk space</li>
+      <li><strong>Graphics:</strong> DirectX 9 compatible GPU</li>
+      <li><strong>Display:</strong> 800x600 minimum resolution</li>
+      <li><strong>Input:</strong> Keyboard and Mouse</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">Recommended Requirements</button>
+  <div class="content">
+    <ul>
+      <li><strong>Processor:</strong> Pentium 4 or equivalent, 2.0 GHz+</li>
+      <li><strong>RAM:</strong> 1 GB or more</li>
+      <li><strong>Storage:</strong> 5 GB free disk space</li>
+      <li><strong>Graphics:</strong> DirectX 11 compatible GPU</li>
+      <li><strong>Display:</strong> 1280x720 or higher resolution</li>
+      <li><strong>Internet:</strong> Broadband connection for Steam and updates</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">Supported Software</button>
+  <div class="content">
+    <ul>
+      <li>Steam Client (patched)</li>
+      <li>UltimateAV Antivirus</li>
+      <li>DirectX 11 and later supported games</li>
+      <li>Classic Win98 programs (backwards compatible)</li>
+    </ul>
+  </div>
+
+  <section style="text-align: center;">
+    <a href="index.html" class="btn">Back to Home</a>
+  </section>
+
+  <footer>
+    <p>© 2025 NoamOS Project — Rebuilt with 💚 by Noam</p>
+  </footer>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
