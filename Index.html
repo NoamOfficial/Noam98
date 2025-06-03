@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NoamOS 98-X</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  body {
+    margin: 0;
+    background: #0f0f0f;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background: #001100;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid #00ff00;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #00ff00;
+  }
+
+  main {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    border-bottom: 2px solid #00ff00;
+    padding-bottom: 0.25rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  ul.features {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul.features li {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  ul.features li::before {
+    content: '▹';
+    color: #00ff00;
+    position: absolute;
+    left: 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+  }
+
+  table, th, td {
+    border: 1px solid #00ff00;
+  }
+
+  th, td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+
+  th {
+    background: #002200;
+  }
+
+  footer {
+    background: #001100;
+    color: #00ff00;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-top: 2px solid #00ff00;
+  }
+
+  /* Button styles */
+  .btn {
+    background: transparent;
+    border: 1.5px solid #00ff00;
+    color: #00ff00;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .btn:hover, .btn:focus {
+    background: #00ff00;
+    color: #001100;
+    outline: none;
+  }
+
+  /* Collapsible content */
+  .collapsible {
+    background-color: #001100;
+    color: #00ff00;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.05em;
+    user-select: none;
+    margin: 1rem 0 0.25rem;
+    border-left: 3px solid #00ff00;
+  }
+
+  .active, .collapsible:hover {
+    background-color: #003300;
+  }
+
+  .content {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-left: 3px solid #00ff00;
+    background: #001100;
+  }
+
+  .content p, .content ul, .content table {
+    margin: 1rem 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>NoamOS 98-X</h1>
+</header>
+<main>
+  <section>
+    <h2>About</h2>
+    <p><em>“Microsoft abandoned it. I rebuilt it.”</em></p>
+    <p><strong>NoamOS 98-X</strong> is a complete rebirth of Windows 98 featuring modern game support, DirectX 11 compatibility, a flat memory model, and a fully rewritten registry system. This is not your grandma’s Win98 anymore — it’s a fusion of retro OS nostalgia and futureproof power.</p>
+  </section>
+
+  <button class="collapsible">Key Features</button>
+  <div class="content">
+    <ul class="features">
+      <li>Patched kernel &amp; hooked Win32 syscall calls</li>
+      <li>DirectX 11+ support for modern gaming</li>
+      <li>Rewritten VB/VBA frameworks with NoamAPI</li>
+      <li>Flat memory model — segmentation system nuked</li>
+      <li>Rebuilt registry replacing reg.dat</li>
+      <li>Steam compatibility</li>
+      <li>UltimateAV integration</li>
+    </ul>
+  </div>
+  <a href="requirements.html" class="btn" id="requirements-link">Requirements</a>
+
+
+  <button class="collapsible">File Breakdown</button>
+  <div class="content">
+    <table>
+      <thead>
+        <tr><th>File</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VMM32.VXD</td><td>Patched kernel with syscall hooks</td></tr>
+        <tr><td>IO.SYS</td><td>I/O subsystem rewritten</td></tr>
+        <tr><td>COMMAND.COM</td><td>Recompiled shell with NoamAPI core</td></tr>
+        <tr><td>CONFIG.SYS</td><td>Loads new drivers &amp; scripts</td></tr>
+        <tr><td>NTSYS.COM</td><td>Boot patcher, self-destructing</td></tr>
+        <tr><td>REG.DAT</td><td>New registry architecture</td></tr>
+        <tr><td>NoamAPI.dll</td><td>Core API framework</td></tr>
+        <tr><td>DirectX11.dll</td><td>DX11 shim / GPU interface</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="collapsible">Installation</button>
+  <div class="content">
+    <ol>
+      <li>Download the latest ISO from the <a href="#releases" style="color:#00ff00;">releases</a> section</li>
+      <li>Flash it to USB/CD</li>
+      <li>Boot and let NTSYS.COM patch your system</li>
+      <li>Enjoy modern gaming on a classic OS</li>
+    </ol>
+  </div>
+
+  <button class="collapsible">Files Copied</button>
+  <div class="content">
+    <ul class="features">
+      <li>VMM32.VXD</li>
+      <li>IO.SYS</li>
+      <li>COMMAND.COM</li>
+      <li>CONFIG.SYS</li>
+      <li>NTSYS.COM</li>
+      <li>REG.DAT</li>
+      <li>NoamAPI.dll</li>
+      <li>DirectX11.dll</li>
+      <li>VBFRAMEWORK.dll</li>
+      <li>VBAFRAMEWORK.dll</li>
+      <li>WIN32.SYS</li>
+      <li>WIN.INI</li>
+      <li>SYSTEM.INI</li>
+      <li>MSDOS.SYS</li>
+      <li>CMD.EXE</li>
+      <li>NTDLL.DLL</li>
+      <li>KERNEL32.DLL</li>
+      <li>USER32.DLL</li>
+      <li>GDI32.DLL</li>
+      <li>SHELL32.DLL</li>
+      <li>ADVAPI32.DLL</li>
+      <li>COMCTL32.DLL</li>
+      <li>OLE32.DLL</li>
+      <li>OLEAUT32.DLL</li>
+      <li>MSVBVM60.DLL</li>
+      <li>DXCORE.DLL</li>
+      <li>D3D11.DLL</li>
+      <li>DINPUT8.DLL</li>
+      <li>SETUPAPI.DLL</li>
+      <li>WS2_32.DLL</li>
+      <li>USERINIT.EXE</li>
+      <li>LOGONUI.EXE</li>
+      <li>EXPLORER.EXE</li>
+      <li>SPAWN.EXE</li>
+      <li>VMM32.DLL</li>
+      <li>BOOT.INI</li>
+      <li>HOSTS</li>
+      <li>WINSOCK.DLL</li>
+      <li>ULTIMATEAV.EXE</li>
+    </ul>
+  </div>
+
+  <button class="collapsible" id="releases">Releases</button>
+  <div class="content">
+    <p><strong>Version 0.9 Beta</strong> — Initial public release with Steam support and patched DX11.</p>
+    <p><strong>Version 1.0 Stable</strong> — Fully integrated UltimateAV and registry overhaul.</p>
+  </div>
+
+  <section>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/@NoamOfficial/Noam98" class="btn" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+      <a href="https://github.com/@NoamOfficial/Noam98/releases" class="btn" target="_blank" rel="noopener noreferrer">Download Latest ISO</a>
+    </p>
+  </section>
+</main>
+<footer>
+  <p>© 2025 NoamOS Project — Rebuilt with 💚 by Noam</p>
+</footer>
+
+<script>
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const content = btn.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+</body>
+</html>
